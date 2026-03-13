@@ -10,7 +10,7 @@
     "format-check": "prettier --check 'src/**/*.js'",
     "lint": "eslint src/",
     "build-depend":"npm i -g @vercel/ncc npm-check-updates",
-    "build": "ncc build",
+    "build": "ncc build && echo '{\"type\": \"commonjs\"}' > dist/package.json",
     "test": "jest",
     "all": "npm run build-depend && npm run format && npm run lint && npm run build && npm test"
   },
